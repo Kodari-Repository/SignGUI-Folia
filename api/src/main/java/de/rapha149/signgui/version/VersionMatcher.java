@@ -29,6 +29,7 @@ public class VersionMatcher {
         versions.put("1.21.5", "1_21_R4");
         versions.put("1.21.6", "1_21_R5");
         versions.put("1.21.7", "1_21_R5");
+        versions.put("1.21.8", "1_21_R5");
         VERSIONS = Collections.unmodifiableMap(versions);
     }
 
