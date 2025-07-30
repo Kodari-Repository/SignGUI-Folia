@@ -29,13 +29,19 @@ public class Wrapper1_19_R2 implements VersionWrapper {
 
     @Override
     public Material getDefaultType() {
-        return Material.OAK_SIGN;
+        return Material.OAK_WALL_SIGN;
     }
 
     @Override
     public List<Material> getSignTypes() {
-        return Arrays.asList(Material.OAK_SIGN, Material.BIRCH_SIGN, Material.SPRUCE_SIGN, Material.JUNGLE_SIGN,
-                Material.ACACIA_SIGN, Material.DARK_OAK_SIGN, Material.CRIMSON_SIGN, Material.WARPED_SIGN);
+        return Arrays.asList(
+                Material.OAK_SIGN, Material.BIRCH_SIGN, Material.SPRUCE_SIGN, Material.JUNGLE_SIGN,
+                Material.ACACIA_SIGN, Material.DARK_OAK_SIGN, Material.CRIMSON_SIGN, Material.WARPED_SIGN,
+                Material.MANGROVE_SIGN, Material.BAMBOO_SIGN,
+                Material.OAK_WALL_SIGN, Material.BIRCH_WALL_SIGN, Material.SPRUCE_WALL_SIGN, Material.JUNGLE_WALL_SIGN,
+                Material.ACACIA_WALL_SIGN, Material.DARK_OAK_WALL_SIGN, Material.CRIMSON_WALL_SIGN, Material.WARPED_WALL_SIGN,
+                Material.MANGROVE_WALL_SIGN, Material.BAMBOO_WALL_SIGN
+        );
     }
 
     @Override

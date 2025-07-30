@@ -21,12 +21,12 @@ public class Wrapper1_13_R2 implements VersionWrapper {
 
     @Override
     public Material getDefaultType() {
-        return Material.SIGN;
+        return Material.WALL_SIGN;
     }
 
     @Override
     public List<Material> getSignTypes() {
-        return Arrays.asList(Material.SIGN);
+        return Arrays.asList(Material.SIGN, Material.WALL_SIGN);
     }
 
     @Override
