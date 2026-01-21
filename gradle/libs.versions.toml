@@ -1,0 +1,18 @@
+[versions]
+# minecraft related
+paperweight-userdev = "2.0.0-beta.19"
+spigot = "1.16.5-R0.1-SNAPSHOT"
+
+# useful
+folialib = "0.5.1"
+
+[libraries]
+# minecraft related
+paperweight-userdev = { group = "io.papermc.paperweight", name = "paperweight-userdev", version.ref = "paperweight-userdev" }
+spigot = { group = "org.spigotmc", name = "spigot", version.ref = "spigot" }
+
+# useful
+folialib = { group = "com.tcoded", name = "FoliaLib", version.ref = "folialib" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version = "9.3.0" }

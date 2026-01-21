@@ -108,7 +108,7 @@ public class SignGUI {
                 };
 
                 if (callHandlerSynchronously)
-                    Bukkit.getScheduler().runTask(plugin, runnable);
+                    SignScheduler.scheduler(plugin).runLater(runnable, 1L);
                 else
                     runnable.run();
             });
