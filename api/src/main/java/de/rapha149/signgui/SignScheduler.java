@@ -8,11 +8,9 @@ public class SignScheduler {
 
     private static FoliaLib foliaLib;
 
-    public static PlatformScheduler scheduler(
-            JavaPlugin plugin
-    ) {
+    public static PlatformScheduler scheduler() {
         if (foliaLib == null)
-            foliaLib = new FoliaLib(plugin);
+            foliaLib = new FoliaLib(JavaPlugin.getProvidingPlugin(SignScheduler.class));
 
         return foliaLib.getScheduler();
     }

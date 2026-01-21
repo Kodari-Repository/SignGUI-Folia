@@ -79,7 +79,9 @@ public class SignGUI {
                     List<SignGUIAction> actions = handler.onFinish(player, new SignGUIResult(resultLines));
 
                     if (actions == null || actions.isEmpty()) {
-                        close.run();
+                        SignScheduler.scheduler().runAtLocation(signEditor.getLocation(), task -> {
+                            close.run();
+                        });
                         return;
                     }
 
@@ -108,7 +110,7 @@ public class SignGUI {
                 };
 
                 if (callHandlerSynchronously)
-                    SignScheduler.scheduler(plugin).runLater(runnable, 1L);
+                    SignScheduler.scheduler().runLater(runnable, 1L);
                 else
                     runnable.run();
             });

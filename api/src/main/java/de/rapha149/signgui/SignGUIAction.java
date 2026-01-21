@@ -122,7 +122,7 @@ public interface SignGUIAction {
 
             @Override
             public void execute(SignGUI gui, SignEditor signEditor, Player player) {
-                SignScheduler.scheduler(plugin).runLater(() -> player.openInventory(inventory), 1L);
+                SignScheduler.scheduler().runLater(() -> player.openInventory(inventory), 1L);
             }
         };
     }
@@ -175,7 +175,7 @@ public interface SignGUIAction {
 
             @Override
             public void execute(SignGUI gui, SignEditor signEditor, Player player) {
-                SignScheduler.scheduler(plugin).runLater(runnable, 1L);
+                SignScheduler.scheduler().runLater(runnable, 1L);
             }
         };
     }
