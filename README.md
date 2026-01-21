@@ -24,15 +24,6 @@ dependencies {
 }
 ```
 
-**Maven dependency:**
-```xml
-<dependency>
-    <groupId>de.rapha149.signgui</groupId>
-    <artifactId>signgui</artifactId>
-    <version>2.5.4</version>
-</dependency>
-```
-
 To avoid conflicts with other plugins, relocate the package:
 
 **Gradle (with Shadow):**
