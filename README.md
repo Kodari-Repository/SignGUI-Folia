@@ -1,11 +1,30 @@
-# SignGUI [![Build](https://github.com/Rapha149/SignGUI/actions/workflows/build.yml/badge.svg)](https://github.com/Rapha149/SignGUI/actions/workflows/build.yml) [![Maven Central](https://img.shields.io/maven-central/v/de.rapha149.signgui/signgui?label=Maven%20Central)](https://central.sonatype.com/artifact/de.rapha149.signgui/signgui) [![Javadoc](https://javadoc.io/badge2/de.rapha149.signgui/signgui/Javadoc.svg)](https://javadoc.io/doc/de.rapha149.signgui/signgui) 
 An api to get input text via a sign in Minecraft.  
 The api supports the Minecraft versions from `1.8` to `1.21`.  
 Also supports adventure text and mojang-mapped Paper plugins (1.20.5+).
 
 ## Integration
 
-Maven dependency:
+```kotlin
+repositories {
+    maven("https://repo.kodari.ai/releases")
+}
+```
+
+**Gradle (Kotlin DSL):**
+```kotlin
+dependencies {
+    implementation("de.rapha149.signgui:SignGUI:2.5.4")
+}
+```
+
+**Gradle (Groovy):**
+```groovy
+dependencies {
+    implementation "de.rapha149.signgui:SignGUI:2.5.4"
+}
+```
+
+**Maven dependency:**
 ```xml
 <dependency>
     <groupId>de.rapha149.signgui</groupId>
@@ -14,34 +33,13 @@ Maven dependency:
 </dependency>
 ```
 
-In order to avoid conflicts with other plugins that also use this api, relocate the package in your maven shade plugin:
-```xml
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>SHADE_VERSION</version> <!-- The version must be at least 3.5.0 -->
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>shade</goal>
-                    </goals>
-                    <configuration>
-                        <relocations>
-                            <relocation>
-                                <pattern>de.rapha149.signgui</pattern>
-                                <!-- Replace [YOUR_PLUGIN_PACKAGE] with your namespace -->
-                                <shadedPattern>[YOUR_PLUGIN_PACKAGE].signgui</shadedPattern>
-                            </relocation>
-                        </relocations>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-    </plugins>
-</build>
+To avoid conflicts with other plugins, relocate the package:
+
+**Gradle (with Shadow):**
+```kotlin
+tasks.shadowJar {
+    relocate("de.rapha149.signgui", "[YOUR_PLUGIN_PACKAGE].signgui")
+}
 ```
 
 <details>
