@@ -94,7 +94,9 @@ public class SignGUI {
 
                             SignGUIActionInfo otherInfo = otherAction.getInfo();
                             if (info.isConflicting(otherInfo)) {
-                                close.run();
+                                SignScheduler.scheduler().runAtLocation(signEditor.getLocation(), task -> {
+                                    close.run();
+                                });
                                 throw new IllegalArgumentException("The actions " + info.getName() + " and " + otherInfo.getName() + " are conflicting");
                             }
                         }
@@ -104,7 +106,9 @@ public class SignGUI {
                     }
 
                     if (!keepOpen)
-                        close.run();
+                        SignScheduler.scheduler().runAtLocation(signEditor.getLocation(), task -> {
+                            close.run();
+                        });
                     for (SignGUIAction action : actions)
                         action.execute(this, signEditor, player);
                 };
