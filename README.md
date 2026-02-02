@@ -13,14 +13,14 @@ repositories {
 **Gradle (Kotlin DSL):**
 ```kotlin
 dependencies {
-    implementation("de.rapha149.signgui:SignGUI:2.5.5")
+    implementation("de.rapha149.signgui:SignGUI:2.5.6")
 }
 ```
 
 **Gradle (Groovy):**
 ```groovy
 dependencies {
-    implementation "de.rapha149.signgui:SignGUI:2.5.5"
+    implementation "de.rapha149.signgui:SignGUI:2.5.6"
 }
 ```
 
