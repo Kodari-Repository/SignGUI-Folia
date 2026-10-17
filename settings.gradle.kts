@@ -13,6 +13,7 @@ include(":api")
 /*
  * Versions
  */
+include(":Mojang26_3")
 include(":Mojang1_21_R5")
 include(":Mojang1_21_R4")
 include(":Mojang1_21_R3")

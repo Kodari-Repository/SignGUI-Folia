@@ -25,6 +25,9 @@ fun Project.mcVersion(): String {
     if (versionExceptions.containsKey(projectName))
         return versionExceptions.getValue(projectName)
 
+    if (!projectName.contains("_R"))
+        return projectName.replace("_", ".")
+
     val version = projectName
         .substringBefore("_R")
         .replace("_", ".") // 1_8_R1 = 1.8

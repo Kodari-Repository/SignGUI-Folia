@@ -42,6 +42,7 @@ dependencies {
     /*
      * Versions
      */
+    implementation(project(":Mojang26_3"))
     implementation(project(":Mojang1_21_R5"))
     implementation(project(":Mojang1_21_R4"))
     implementation(project(":Mojang1_21_R3"))

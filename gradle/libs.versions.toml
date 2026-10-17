@@ -1,6 +1,6 @@
 [versions]
 # minecraft related
-paperweight-userdev = "2.0.0-beta.19"
+paperweight-userdev = "2.0.0-beta.24"
 spigot = "1.16.5-R0.1-SNAPSHOT"
 
 # useful

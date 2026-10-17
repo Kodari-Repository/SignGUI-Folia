@@ -28,6 +28,10 @@ val java21 = setOf(
     "Mojang1_21_R5"
 )
 
+val java25 = setOf(
+    "Mojang26_3"
+)
+
 plugins {
     `java-library`
 }
@@ -35,6 +39,7 @@ plugins {
 java {
     toolchain {
         val version = when (project.name) {
+            in java25 -> 25
             in java21 -> 21
             in java17 -> 17
             in java16 -> 16
