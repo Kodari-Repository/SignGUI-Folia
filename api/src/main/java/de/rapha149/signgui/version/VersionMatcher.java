@@ -63,7 +63,7 @@ public class VersionMatcher {
     private static VersionWrapper initWrapper() throws SignGUIVersionException {
         String craftBukkitPackage = Bukkit.getServer().getClass().getPackage().getName();
         String version = craftBukkitPackage.contains(".v") ? craftBukkitPackage.split("\\.")[3].substring(1) :
-                VERSIONS.getOrDefault(Bukkit.getBukkitVersion().split("-")[0], NEWEST_VERSION);
+                VERSIONS.getOrDefault(getMinecraftVersion(), NEWEST_VERSION);
 
         final String className;
         if (useMojangMappings(version)) {
@@ -80,6 +80,12 @@ public class VersionMatcher {
         } catch (ClassNotFoundException exception) {
             throw new SignGUIVersionException("SignGUI does not support the server version \"" + version + "\"", exception);
         }
+    }
+
+    private static String getMinecraftVersion() {
+        String version = Bukkit.getBukkitVersion().split("-")[0];
+        int buildIndex = version.indexOf(".build");
+        return buildIndex != -1 ? version.substring(0, buildIndex) : version;
     }
 
     private static boolean useMojangMappings(String version) {
